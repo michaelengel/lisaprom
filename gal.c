@@ -41,16 +41,5 @@ int main(void) {
     }
     printf("\n\n");
   }
-
-// print minterms?
-#if 0
-  for (int bit = 0; bit < 8; bit++) {
-    printf("bit %d = \n", bit);
-    for (int n = 0; n < 256; n++) {
-      printf("%d", (bytes[n] & (1<<bit))?1:0);
-    }
-    printf("\n\n");
-  }
-#endif
 }
 
