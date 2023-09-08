@@ -1,17 +1,24 @@
 Results of running serialbits on the PROM, the serial number is encoded in the last two (identical) lines:
+Decoded according to https://www.applefritter.com/content/apple-lisa-serial-number-info
 
 xxxx = F F 0 0 1 0 2 8 9 3 0 5 3 0 0 0
        F F 0 0 1 0 2 8 9 3 0 5 3 0 0 0
        F F 1 0 8 4 0 7 2 0 3 2 3 0 0 0 
        F F 1 0 8 4 0 7 2 0 3 2 3 0 0 0 
 
+Plant 10, year 84, day 072, serial 0323
+
 0010 = F F 0 0 1 0 0 0 6 5 0 3 4 0 0 0 
        F F 0 0 1 0 0 0 6 5 0 3 4 0 0 0 
        F F 0 2 8 2 0 3 6 0 0 1 0 0 0 0 
        F F 0 2 8 2 0 3 6 0 0 1 0 0 0 0 
 
+Plant 02, year 82, day 036, serial 0010
+
 0195 = F F 0 0 1 0 2 9 6 7 0 6 2 0 0 0 
        F F 0 0 1 0 2 9 6 7 0 6 2 0 0 0 
        F F 1 0 8 3 2 4 4 0 1 9 5 0 0 0 
        F F 1 0 8 3 2 4 4 0 1 9 5 0 0 0 
+
+Plant 10, year 83, day 244, serial 0195
 
