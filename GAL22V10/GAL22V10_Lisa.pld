@@ -1,0 +1,108 @@
+GAL22V10
+LisaProm
+
+; Replacement for a bipolar 6309 (or similar) 256 x 8 bit PROM
+; used in the Apple Lisa CPU board
+
+; Assemble with GALasm - https://github.com/daveho/GALasm
+
+; Note that Q3 and Q2 had to be swapped sice the OLMC
+; for pin 16 has too few OR terms!
+
+A0 A1 A2 A3 A4 A5 A6 A7 E1 E2 NC GND
+NC Q0 Q1 Q3 Q2 Q4 Q5 Q6 Q7 Q7B Q4B VCC 
+
+
+Q0.R  =              A5 *  A4 *  A3 
+      +              A5 *  A4 * /A3 *  A2 *  A1 * /A0
+Q0.E  = /E1 * /E2
+
+Q1.R  = /A7
+      +  A7 *  A6
+      +  A7 * /A6 *  A5 *  A4 *  A3
+Q1.E  = /E1 * /E2
+
+Q2.R  = /A7 *       /A5 
+      + /A7 *        A5 * /A4 * /A3 
+      + /A7 *        A5 * /A4 *  A3 * /A2 
+      + /A7 *        A5 * /A4 *  A3 *  A2 * /A1 *  A0
+      +  A7 * /A6 * /A5 * /A4 * /A3 * /A2 *  A0 
+      +  A7 * /A6 * /A5 * /A4 * /A3 *  A2 * /A1 *  A0 
+      +  A7 * /A6 * /A5 * /A4 * /A3 *  A2 *  A1 
+      +  A7 * /A6 * /A5 * /A4 *  A3
+      +  A7 * /A6 * /A5 *  A4
+      +  A7 * /A6 *  A5 * /A4 * /A3
+      +  A7 * /A6 *  A5 * /A4 *  A3 * /A2
+      +  A7 * /A6 *  A5 * /A4 *  A3 *  A2 * /A1 *  A0
+      +  A7 *  A6 * /A5 *                          A0
+Q2.E  = /E1 * /E2
+
+Q3.R  = /A7 *        A5 *  A4 *  A3
+      +  A7 * /A6 *  A5 *  A4 *  A3
+      +  A7 *  A6 *  A5 *  A4 * /A3 *  A2 *  A1 * /A0
+      +  A7 *  A6 *  A5 *  A4 *  A3
+Q3.E  = /E1 * /E2
+
+Q4B   = /A7 *       /A5
+      + /A7 *        A5 * /A4 * /A3
+      + /A7 *        A5 * /A4 *  A3 * /A2
+      + /A7 *        A5 * /A4 *  A3 *  A2 * /A1
+      + /A7 *        A5 *  A4 * /A3 * /A2 *  A1 * /A0
+      + /A7 *        A5 *  A4 * /A3 *  A2
+      + /A7 *        A5 *  A4 *  A3
+
+Q4.R  =  A7 *       /A5
+      +  A7 *  A6 *  A5 * /A4 * /A3
+      +  A7 *  A6 *  A5 * /A4 *  A3 * /A2
+      +  A7 *  A6 *  A5 * /A4 *  A3 *  A2 * /A1
+      +  A7 *  A6 *  A5 *  A4 * /A3 * /A2 *  A1 * /A0
+      +  A7 *  A6 *  A5 *  A4 * /A3 *  A2
+      +  A7 *  A6 *  A5 *  A4 *  A3
+      +  A7 * /A6 *  A5 * /A4 *  A3 * /A2 * /A1 * /A0
+      +  A7 * /A6 *  A5 * /A4 *  A3 * /A2 *  A1
+      +  A7 * /A6 *  A5 * /A4 *  A3 *  A2 * /A1
+      +  A7 * /A6 *  A5 *  A4 *  A3
+      +  Q4B
+Q4.E  = /E1 * /E2
+
+Q5.R  = /A7
+      +  A7 *        A5 *  A4 *  A3
+Q5.E  = /E1 * /E2
+
+Q6.R  =             /A5 * /A4 * /A3 * /A2 
+      +             /A5 * /A4 * /A3 *  A2 * /A1 
+      +             /A5 * /A4 * /A3 *  A2 *  A1 *  A0
+      +              A5 * /A4 *  A3 * /A2 *  A1 * /A0 
+      +              A5 * /A4 *  A3 *  A2 * /A1 * /A0 
+      +              A5 * /A4 *  A3 *  A2 * /A1 *  A0
+      +              A5 * /A4 *  A3 *  A2 *  A1 * /A0 
+      +              A5 * /A4 *  A3 *  A2 *  A1 *  A0 
+      +              A5 *  A4 * /A3
+Q6.E  = /E1 * /E2
+
+Q7B   =   A7 *         /A5 * /A4 * /A3 
+      +   A7 *         /A5 * /A4 *  A3 * /A2 *  A1 * /A0
+      +   A7 *         /A5 *  A4 * /A3 * /A2 * /A1 *  A0 
+      +   A7 *         /A5 *  A4 * /A3 *  A2 *  A1 
+      +   A7 *         /A5 *  A4 *  A3 * /A2 *  A1 * /A0 
+      +   A7 *         /A5 *  A4 *  A3 *  A1 *  A0
+      +   A7 *          A5 * /A4 * /A3 * /A2 *  A1 * /A0 
+      +   A7 *          A5 * /A4 *  A3 *  A2 * /A1 *  A0 
+      +   A7 *          A5 * /A4 *  A3 *  A2 *  A1 * /A0
+      +   A7 *          A5 *  A4 * /A3 * /A2 *  A1 *  A0
+
+Q7.R  = /A7 *        /A5 * /A4 * /A3 
+      + /A7 *        /A5 *  A4 * /A3 * /A2 *  A1 * /A0 
+      + /A7 *        /A5 *  A4 *  A3 * /A2 * /A1 * /A0
+      + /A7 *        /A5 *  A4 *  A3 * /A2 *  A1 *  A0 
+      + /A7 *        /A5 *  A4 *  A3 *  A2 * /A1 *  A0 
+      + /A7 *         A5 * /A4 * /A3 * /A2 *  A1 
+      + /A7 *         A5 * /A4 *  A2 * /A1 * /A0 
+      + /A7 *         A5 * /A4 *  A3 *  A2 *  A1 * /A0
+      + /A7 *         A5 *  A4 * /A3 * /A2 *  A1 * /A0
+      + Q7B
+Q7.E  = /E1 * /E2
+
+DESCRIPTION
+Replacement for a 6309 ROM used on the Apple Lisa CPU board
+

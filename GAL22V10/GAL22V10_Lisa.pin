@@ -1,0 +1,29 @@
+
+
+ Pin # | Name     | Pin Type
+-----------------------------
+   1   | A0       | Clock/Input
+   2   | A1       | Input
+   3   | A2       | Input
+   4   | A3       | Input
+   5   | A4       | Input
+   6   | A5       | Input
+   7   | A6       | Input
+   8   | A7       | Input
+   9   | E1       | Input
+  10   | E2       | Input
+  11   | NC       | Input
+  12   | GND      | GND
+  13   | NC       | Input
+  14   | Q0       | Output
+  15   | Q1       | Output
+  16   | Q3       | Output
+  17   | Q2       | Output
+  18   | Q4       | Output
+  19   | Q5       | Output
+  20   | Q6       | Output
+  21   | Q7       | Output
+  22   | Q7B      | Output
+  23   | Q4B      | Output
+  24   | VCC      | VCC
+
