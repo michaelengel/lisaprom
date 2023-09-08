@@ -1,4 +1,4 @@
-Run gal2 on the PROM, write down bits as hex nibbles
+Results of running serialbits on the PROM, the serial number is encoded in the last two (identical) lines:
 
 xxxx = F F 0 0 1 0 2 8 9 3 0 5 3 0 0 0
        F F 0 0 1 0 2 8 9 3 0 5 3 0 0 0
